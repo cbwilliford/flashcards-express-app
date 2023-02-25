@@ -10,7 +10,6 @@ const getNewCard = (req, res) => {
   if (!referrer) return res.redirect(`/cards/${newCard}`)
   if (!referrer.match(/\/cards\/(\d+)/)) return res.redirect(`/cards/${newCard}`)
   const prevCard = Number(referrer.match(/\/cards\/(\d+)/)[1])
-  console.log(prevCard, '!==', newCard)
   if(prevCard !== newCard) {
     return res.redirect(`/cards/${newCard}`)
   } else {
